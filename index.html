@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="A simple time-tracker">
-    	<meta name="keywords" content="time-tracker, time-sheet, time-tracking">
 
-		<title>Time Tracker</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="A simple time-tracker">
+	<meta name="keywords" content="time-tracker, time-sheet, time-tracking">
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="reset.css">
-		<link rel="stylesheet" href="normalize.css">
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
+	<title>Time Tracker</title>
 
-		<h1>Our Time Tracker</h1>
-		<script type="text/javascript" src="main.js"></script>
-	</body>
+	<!-- external CSS link -->
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<h1>Our Time Tracker</h1>
+	<section class="time-tracker">
+		<form class="add-task-form">
+			<input type="text" name="task-input" class="task-input" placeholder="What are you working on?" />
+			<input type="submit" class="add-task-submit" value="Add Task" />
+		</form>
+		<section class="added-tasks">
+			<h2 class="tasks-heading">Tasks</h2>
+			<section class="tasks"></section>
+		</section>
+	</section>
+
+
+	<script type="text/javascript" src="main.js"></script>
+</body>
+
 </html>

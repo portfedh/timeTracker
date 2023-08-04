@@ -19,3 +19,50 @@ img{
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(0,71,64);
+  /* background-image: url('https://img.freepik.com/premium-photo/_168058-2213.jpg?size=626&ext=jpg&ga=GA1.2.1032202074.1687051735&semt=ais'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: sans-serif;
+}
+
+h1, form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-input{
+  background: rgb(0,41,37);
+  border-radius: 5px;
+  border: 1.25px solid white;
+  padding: 11px;
+  font-size: 1.5em;
+  width: 700px;
+}
+
+.add-task-submit{
+  background: rgb(0,71,64);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.tasks-heading{
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  margin-right: 760px;
+  padding-top: 25px;
+}
