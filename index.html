@@ -13,13 +13,33 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+	</header>
 		<h1>Our Time Tracker</h1>
-			<section class="time-tracker">
+	</header>
+	<h2 id="switch"></h2>
+	<section class="time-tracker">
 		<form class="add-task-form">
 			<input type="text" name="task-input" class="task-input" placeholder="What are you working on?" />
 			<input type="submit" class="add-task-submit" value="Add Task" />
 		</form>
-			</section>
+	</section>
+	<main>
+		<section class="task-list">
+			<h2>Tasks</h2>
+			<div class = "task">
+				<div class="counter">
+					<div class="time">
+						00:00:00
+					</div>
+					<div class ="controls">
+						<button class = "start">Start</button>
+						<button class = "delete">Delete Task</button>
+						<button class = "download">Download as CSV</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
