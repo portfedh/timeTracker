@@ -25,11 +25,9 @@ body{
   justify-content: center;
   flex-direction: column;
   background-color: rgb(0,71,64);
-  /* background-image: url('https://img.freepik.com/premium-photo/_168058-2213.jpg?size=626&ext=jpg&ga=GA1.2.1032202074.1687051735&semt=ais'); */
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  font-family: sans-serif;
 }
 
 h1, form{
