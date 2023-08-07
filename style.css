@@ -20,13 +20,13 @@ img{
 /* ADDITIONAL STYLES
 /*******************************************/
 :root {
-    --dark-green: #002925;
-    --green: #004740;
-    --orange: #ff7c2f;
+    --dark-green: #001329;
+    --green: #002147;
+    --orange: #ff7b2fc0;
     --light: #FFFFFF;
     --grey: #bed8c6;
     --font-lg: 1.2rem;
-    --red: #b90025;
+    --red: #b90025d3;
 }
 
 * {
