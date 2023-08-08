@@ -9,27 +9,56 @@
 	<title>Time Tracker</title>
 
 	<!-- external CSS link -->
-	<link rel="stylesheet" href="reset.css">
+	<!-- <link rel="stylesheet" href="reset.css"> -->
 	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+			// (function (c, l, a, r, i, t, y) {
+			// 	c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+			// 	t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+			// 	y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+			// })(window, document, "clarity", "script", "dfwal0f3zl");
+	</script>
 </head>
 
 <body>
-
-	<h1>Our Time Tracker</h1>
-	<section class="time-tracker">
-		<form class="add-task-form">
-			<input type="text" name="task-input" class="task-input" placeholder="What are you working on?" />
-			<input type="submit" class="add-task-submit" value="Add Task" />
-		</form>
-		<section class="added-tasks">
-			<h2 class="tasks-heading">Tasks</h2>
-			<section class="tasks"></section>
+	<header>
+		<h1>Our Time Tracker</h1>
+	</header>
+	<h2 id="switch"></h2>
+	<form id="task-form">
+		<input type="text" name="task-input" id="task-input" placeholder="What are you working on?" />
+		<input type="submit" id="task-submit" value="Add Task" />
+	</form>
+	<main>
+		<section class="task-list">
+			<h2>Tasks</h2>
+			<div id="tasks">
+				<div class="task">
+					<div class="content">
+						<input type="text" class="text" value="A new task" readonly />
+					</div>
+					<div class="counter">
+						<div class="time">
+							00:00:00
+						</div>
+						<div class="controls">
+							<button class="start">Start</button>
+							<button class="stop">Stop</button>
+							<button class="reset">Reset</button>
+						</div>
+					</div>
+					<div class="actions">
+						<button class="edit">Edit Task</button>
+						<button class="delete">Delete Task</button>
+						<button class="download">Download as CSV</button>
+					</div>
+				</div>
+			</div>
 		</section>
-	</section>
+	</main>
 
-
-	<script type="text/javascript" src="main.js"></script>
+	<script src="script.js"></script>
 </body>
 
 </html>
