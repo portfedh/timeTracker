@@ -20,8 +20,8 @@ img{
 /* ADDITIONAL STYLES
 /*******************************************/
 :root {
-    --dark-green: #001329;
-    --green: #002147;
+    --dark-blue: #001329;
+    --blue: #002147;
     --orange: #ff7b2fc0;
     --light: #FFFFFF;
     --grey: #bed8c6;
@@ -39,7 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--green);
+    background-color: var(--blue);
     color: var(--light);
     letter-spacing: 1px;
     padding: 2rem 1rem;
@@ -69,7 +69,7 @@ header h1 {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--grey);
-    text-shadow: 1px 3px 1px var(--dark-green);
+    text-shadow: 1px 3px 1px var(--dark-blue);
 }
 
 #task-form {
@@ -92,7 +92,7 @@ input, button {
 #task-input {
     flex: 1 1 0%;
     padding: 0.75rem 0.5rem;
-    background-color: var(--dark-green);
+    background-color: var(--dark-blue);
     color: var(--light);
     border: 1px solid var(--grey);
     border-radius: 0.5rem;
@@ -148,7 +148,7 @@ main {
 #tasks .task {
     margin: 0.5rem 0;
     padding: 0.5rem;
-    background-color: var(--dark-green);
+    background-color: var(--dark-blue);
     border-radius: 0.5rem;
 }
 
