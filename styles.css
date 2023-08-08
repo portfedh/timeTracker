@@ -1,0 +1,274 @@
+
+/* Targets the root of the document: The html element */
+/* Defines variable names */
+:root {
+  --dark-green: #002925; /* Task section background */
+  --green: #004740; /* Page background */
+  --orange: #ff7c2f; /* Start, stop, reset buttons */
+  --light: #FFFFFF; /* Text color */
+  --grey: #bed8c6; /* Search bar contour */
+  --font-lg: 1.2rem; /* Search bar size */
+  --red: #b90025; /* Delete button color */
+}
+
+/* Targets all elements in the document */
+* {
+  margin: 0; /* Remove all spaces */
+  box-sizing: border-box; /* Padding and border included in total width and height of elements */
+  font-family: "Fira sans", sans-serif; /* Sets fonts for all documents */
+}
+
+body {
+  display: flex; /* Flexbox setup */
+  flex-direction: column; /* Child elements will be arranged vertically */
+  min-height: 100vh; /* Minimum vewport height to ensure it coves the entire screen height */
+  background-color: var(--green);
+  color: var(--light);
+  letter-spacing: 1px; /* Spacing between characters in the text */
+  padding: 2rem 1rem;
+}
+
+/* Section with "The Time Tracker, A mind boggling project" Title */
+header {
+  max-width: 800px;
+  width: 100%;
+  margin: 1rem auto 1.5rem auto;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/* Empty section that will be filled by JS */
+#switch {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--grey);
+  text-shadow: 1px 3px 1px var(--dark-green);
+}
+
+/* What are you working on section */
+#task-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  padding: 0.5rem 0 1rem 0;
+}
+
+/* Buttons and title of the task */
+input, button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* What are you working on input area */
+#task-input {
+  flex: 1 1 0%;
+  padding: 0.75rem 0.5rem;
+  background-color: var(--dark-green);
+  color: var(--light);
+  border: 1px solid var(--grey);
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#task-input::placeholder {
+  color: var(--grey);
+}
+
+/* If width is 768px or larger */
+@media (min-width: 768px) {
+  #task-input {
+      font-size: var(--font-lg);
+  }
+}
+
+/* 'Add task' button */
+#task-submit {
+  color: var(--light);
+  font-weight: 600;
+  border: 1px solid var(--grey);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#task-submit:hover {
+  opacity: 0.8;
+}
+
+/* Block where new tasks are added */
+main {
+  flex: 1 1 0%;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.task-list {
+  padding: 1rem 0;
+}
+
+.task-list h2 {
+  font-weight: 400;
+  letter-spacing: normal;
+  margin-bottom: 0.5rem;
+}
+
+*/ Container where new blocks are added */
+#tasks {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#tasks .task {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: var(--dark-green);
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 1000px) {
+  #tasks .task {
+      padding: 1rem 2rem;
+  }
+}
+
+.task .content {
+  flex: 1 1 0%;
+}
+
+.task .content .text {
+  color: var(--light);
+  padding-top: 0.5rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+  border-bottom: 1px solid var(--grey);
+  color: var(--grey);
+}
+
+@media (min-width: 768px) {
+  .text {
+      font-size: var(--font-lg);
+  }
+}
+
+.task .counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.2rem;
+}
+
+@media (min-width: 768px) {
+  .text .time {
+      font-size: var(--font-lg);
+  }
+}
+
+.task .counter .controls button {
+  background-color: var(--orange);
+  color: var(--light);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  margin-right: 0.25rem;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.task .counter .controls button:hover {
+  opacity: 0.8;
+}
+
+.task .actions {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task .actions button {
+  color: var(--light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.task .actions .edit, .download {
+  border: 1px solid var(--light);
+}
+
+.task .actions .delete {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.actions button:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 1000px) {
+  button {
+      font-weight: 600;
+  }
+
+  .counter .controls {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.5rem;
+  }
+
+  .controls button {
+      padding: 1rem 2rem;
+  }
+
+  .task .actions {
+      gap: 1rem;
+  }
+
+  .actions button {
+      padding: 1.5rem 2.2rem;
+  }
+}
+
+/* nav */
+
+.nav-start {
+  text-align: center;
+  font-family: "Avenir Next", sans-serif;;
+  font-weight: 700;
+  background-color: transparent !important;
+  color: var(--light) !important;
+  margin-bottom: 2rem;
+}
+
+.nav-start:hover {
+  color: coral !important;
+}
+
+a {
+  text-decoration: none;
+}
