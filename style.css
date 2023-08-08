@@ -28,6 +28,7 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
+  font-family: sans-serif;
 }
 
 h1, form{
