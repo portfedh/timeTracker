@@ -1,3 +1,5 @@
+// Will be executed when the 'load' event occurs.
+// Ensures all code will run after all the elements in the page have finished loading
 window.addEventListener("load", () => {
   //switch statement
 
@@ -38,7 +40,8 @@ window.addEventListener("load", () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    // Prevents the default form submission behavior, which would cause a page reload
+    // Capitalizes the first letter of the task.
     const task = capitalise(input.value);
 
     if (!task) {
@@ -46,14 +49,10 @@ window.addEventListener("load", () => {
       return;
     }
 
-    //capitalise first letter
-    function capitalise(str) {
-      return str[0].toUpperCase() + str.slice(1);
-    }
-
     //create element
     const task_el = document.createElement("div");
     task_el.classList.add("task");
+    // Adds the CSS class 'task' to the newly created div element.
 
     list_el.appendChild(task_el);
 
@@ -131,6 +130,11 @@ window.addEventListener("load", () => {
     start_btn.addEventListener("click", start);
     stop_btn.addEventListener("click", stop);
     reset_btn.addEventListener("click", reset);
+
+    //capitalise first letter
+    function capitalise(str) {
+      return str[0].toUpperCase() + str.slice(1);
+    }
 
     //counter functions
     function timer() {
