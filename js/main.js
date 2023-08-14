@@ -168,6 +168,61 @@ window.addEventListener('load', () => {
             seconds = 0;
             time_el.innerText = "00:00:00"
         }
+// ... (your previous code)
+
+// Create CSV button
+const csv = document.createElement('button');
+csv.classList.add('CSV');
+csv.innerText = "Download as CSV";
+controls_el.appendChild(csv);
+
+// Attach click event listener to CSV button
+csv.addEventListener('click', createCSVButton);
+
+// ... (your other code)
+// Define createCSVButton function
+function createCSVButton() {
+    const taskNameElement = document.querySelector('.text'); // Adjust the selector accordingly
+    if (taskNameElement) {
+        const taskName = taskNameElement.value;
+        const currentTime = getCurrentTime();
+        const currentDay = getCurrentDay();
+
+        const csvData = [
+            ["Task Name", "Time", "Day"],
+            [taskName, currentTime, currentDay]
+        ];
+
+        downloadTaskAsCSV(csvData);
+    }
+}
+function getCurrentTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    return `${hours}-${minutes}-${seconds}`;
+}
+function getCurrentDay() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+// Define downloadTaskAsCSV function
+function downloadTaskAsCSV(data) {
+    const csvContent = "data:text/csv;charset=utf-8," + data.map(row => row.join(",")).join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "task.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link); // Clean up
+}
+
+// ... (the rest of your code)
 
         //edit
 
@@ -188,5 +243,6 @@ window.addEventListener('load', () => {
             list_el.removeChild(task_el);
         })
     })
+    
 })
 
