@@ -292,3 +292,10 @@ main {
 a {
     text-decoration: none;
 }
+
+/*fixing the cv button smalles screens */
+/* @media (max-width: 767px) {
+    button {
+        display:flex;
+        gap:1;
+    } */

@@ -172,9 +172,9 @@ window.addEventListener('load', () => {
 
 // Create CSV button
 const csv = document.createElement('button');
-csv.classList.add('CSV');
+csv.classList.add('download');
 csv.innerText = "Download as CSV";
-controls_el.appendChild(csv);
+actions_el.appendChild(csv);
 
 // Attach click event listener to CSV button
 csv.addEventListener('click', createCSVButton);
